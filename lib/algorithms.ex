@@ -2,11 +2,7 @@ defmodule Algorithms do
   @moduledoc "Algorithms for tasks in lab 1"
   @spec prime?(number) :: boolean
   def prime?(n) do
-    if n < 2 do
-      false
-    else
-      Enum.all?(2..(n - 1), &(rem(n, &1) != 0))
-    end
+    n > 2 and Enum.all?(2..(n - 1), &(rem(n, &1) != 0))
   end
 
   @spec cylinder_area(number, number) :: float
@@ -50,9 +46,9 @@ defmodule Algorithms do
     end
   end
 
-  @spec translate(map, String.t()) :: String.t()
-  def translate(dict, sentence) do
-    sentence |> Enum.map(&Map.get(dict, &1, &1)) |> Enum.join(" ")
+  @spec translate(String.t(), map) :: String.t()
+  def translate(sentence, dict) do
+    sentence |> String.split() |> Enum.map(&Map.get(dict, &1, &1)) |> Enum.join(" ")
   end
 
   @spec smallest_number(integer, integer, integer) :: integer
