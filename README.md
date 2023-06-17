@@ -1,6 +1,6 @@
 # Lab1
 
-**TODO: Add description**
+Repository for laboratory work 1 in real time programming course. The goal of the laboratory is to get familiar with Elixir, the actor model and the abstractions/ patterns that come with message passing between processes.
 
 ## Installation
 
